@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik's Portfolio</title>
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="space-effects">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div class="nebula"></div>
+    </div>
+    <div class="container">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle">🌓</button>
+        </nav>
+        <div class="hero">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <h1><span id="typed-text"></span></h1>
+                <a href="https://drive.google.com/your-resume-link" target="_blank" class="cta-button">View My Resume</a>
+            </div>
+            <div class="avatar">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/b/m/t/medium-butcutnw15136-studio-ghibli-anime-movie-hd-matte-finish-original-imaggvwdwngr84ag.jpeg?q=90&crop=false" alt="Avatar" loading="lazy">
+            </div>
+        </div>
+        <section class="about" id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm Pratik Raj, a passionate UI/UX designer with a focus on creating intuitive and visually appealing user experiences. I love blending creativity with functionality to design products that users love.</p>
+                    <p>My design philosophy is simple: prioritize the user. I believe in designing interfaces that are not only beautiful but also easy to use and accessible to everyone.</p>
+                    <p>Fun Fact: When I'm not designing, you can find me binge-watching anime or exploring new hiking trails!</p>
+                </div>
+            </div>
+        </section>
+        <section class="skills-section">
+            <h2>Technical Skills</h2>
+            <p>Explore my technical expertise through this interactive globe.</p>
+            <div class="canvas-container">
+                <canvas id="skillsGlobe"></canvas>
+            </div>
+        </section>
+        <div class="moving-tiles">
+            <div class="tiles-track">
+                <div class="tile">
+                    <h3>Data Analysis</h3>
+                    <p>Extracting insights from complex datasets using statistical methods and tools</p>
+                </div>
+                <div class="tile">
+                    <h3>Machine Learning</h3>
+                    <p>Building predictive models and algorithms with Python and TensorFlow</p>
+                </div>
+                <div class="tile">
+                    <h3>Data Visualization</h3>
+                    <p>Creating intuitive and interactive visual representations with Tableau and Matplotlib</p>
+                </div>
+                <div class="tile">
+                    <h3>Big Data</h3>
+                    <p>Processing and analyzing large-scale data using Hadoop and Spark</p>
+                </div>
+            </div>
+        </div>
+        <div class="projects" id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="https://pratik-weather19.vercel.app/" target="_blank">
+                        <img src="https://i.pinimg.com/originals/ef/d8/46/efd8467c907bb0b7d84e4cd27f4cddaa.gif" alt="Weather App Thumbnail" loading="lazy">
+                    </a>
+                    <h3>Weather App</h3>
+                    <p>A weather app that can show weather up to five days for any location, with day and night mode.</p>
+                </div>
+                <div class="project-card">
+                    <a href="https://elaborate-yeot-f500bf.netlify.app/" target="_blank">
+                        <img src="https://i0.wp.com/www.technollama.co.uk/wp-content/uploads/2013/11/totoro02.gif?resize=500%2C256" alt="Anime Database Thumbnail" loading="lazy">
+                    </a>
+                    <h3>Anime Database</h3>
+                    <p>An anime database where you can search and view data for any anime.</p>
+                </div>
+            </div>
+        </div>
+        <section class="timeline" id="experience">
+            <h2>My Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2020 - Started Learning UI/UX</h3>
+                        <p>Began my journey into UI/UX design by learning tools like Figma and Adobe XD.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2022 - First Internship</h3>
+                        <p>Worked as a UI/UX intern at [Company Name], designing user interfaces for mobile apps.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2023 - Launched Weather App</h3>
+                        <p>Designed and deployed a weather app with day/night mode functionality.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2024 - Anime Database Project</h3>
+                        <p>Created an anime database with search functionality, focusing on user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials" id="testimonials">
+            <h2>What People Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Pratik's UI/UX designs are intuitive and visually stunning. He transformed our app's user experience!"</p>
+                    <h3>- John Doe, CEO at [Company]</h3>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Working with Pratik was a pleasure. His attention to detail and creativity are unmatched."</p>
+                    <h3>- Jane Smith, Product Manager</h3>
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="contact">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/pratik-raj-6a5794327/" title="LinkedIn"><img class="img" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy"></a>
+                <a href="https://github.com/PRATIK-4751" title="GitHub"><img class="img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" loading="lazy"></a>
+                <a href="/cdn-cgi/l/email-protection#b2c0d3d8c2c0d3c6dbd983818bf2d5dfd3dbde9cd1dddf" title="Email"><img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Email" loading="lazy"></a>
+                <a href="#twitter" title="Not available rn"><img class="img" src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="Twitter" loading="lazy"></a>
+            </div>
+        </footer>
+    </div>
+    <button class="back-to-top" title="Back to Top">⬆</button>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="module" src="script.js" defer></script>
+</body>
+</html>
