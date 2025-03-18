@@ -118,7 +118,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -132,6 +132,7 @@ nav {
     gap: 2rem;
     padding: 1rem;
     margin-bottom: 4rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Added background for visibility */
 }
 
 @media (max-width: 576px) {
@@ -148,6 +149,7 @@ nav a {
     font-size: 1rem;
     position: relative;
     padding: 10px;
+    transition: color 0.3s; /* Ensure hover effect works */
 }
 
 nav a::after {
@@ -165,6 +167,10 @@ nav a:hover::after, nav a:active::after {
     width: 100%;
 }
 
+nav a:hover {
+    color: #ff4d4d; /* Enhanced hover effect */
+}
+
 .theme-toggle {
     background: none;
     border: none;
@@ -173,7 +179,6 @@ nav a:hover::after, nav a:active::after {
     font-size: 1.5rem;
     transition: transform 0.3s;
     padding: 10px;
-    /* Ensure toggle is always clickable */
     display: block;
     position: relative;
     z-index: 10;

@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 });
 
 const typedText = new Typed('#typed-text', {
-    strings: ["Hey, I’m Pratik!^500", "Hey, I’m Pratik!,a UI/UX designer^500", "Hey, I’m Pratik! , a UI/UX designer and a Data Science major!^1000"],
+    strings: ["Hey, I’m Pratik!^500", "Hey, I’m Pratik! I’m a UI/UX designer^500", "Hey, I’m Pratik! I’m a UI/UX designer and a Data Science major!^1000"],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1000,
@@ -207,13 +207,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
 
-    // Ensure theme toggle works consistently
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
+    // Ensure theme toggle works consistently across all screen sizes
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            console.log('Theme switched to:', newTheme); // Debug log
+        });
+    }
 
     // Initialize theme from localStorage or default to dark
     const savedTheme = localStorage.getItem('theme');
@@ -225,6 +228,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const track = document.querySelector('.tiles-track');
     if (track) track.innerHTML += track.innerHTML;
+
+    // Add smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                console.log('Scrolling to:', targetId); // Debug log
+            }
+        });
+    });
+
     setTimeout(() => new SkillsGlobe(), 100);
 });
 
