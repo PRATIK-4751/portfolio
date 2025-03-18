@@ -207,18 +207,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
 
-    // Ensure theme toggle works consistently across all screen sizes
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            console.log('Theme switched to:', newTheme); // Debug log
+            console.log('Theme switched to:', newTheme);
         });
     }
 
-    // Initialize theme from localStorage or default to dark
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         html.setAttribute('data-theme', savedTheme);
@@ -229,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.tiles-track');
     if (track) track.innerHTML += track.innerHTML;
 
-    // Add smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -238,9 +235,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
-                console.log('Scrolling to:', targetId); // Debug log
+                console.log('Scrolling to:', targetId);
             }
         });
+    });
+
+    // Ensure project cards are tappable on mobile
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const link = card.querySelector('a');
+        if (link) {
+            card.addEventListener('click', (e) => {
+                // Prevent default if the click is on the link itself
+                if (e.target.tagName !== 'A') {
+                    window.open(link.href, '_blank');
+                }
+            });
+        }
     });
 
     setTimeout(() => new SkillsGlobe(), 100);

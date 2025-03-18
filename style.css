@@ -132,7 +132,7 @@ nav {
     gap: 2rem;
     padding: 1rem;
     margin-bottom: 4rem;
-    background-color: rgba(0, 0, 0, 0.8); /* Added background for visibility */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 576px) {
@@ -149,7 +149,8 @@ nav a {
     font-size: 1rem;
     position: relative;
     padding: 10px;
-    transition: color 0.3s; /* Ensure hover effect works */
+    transition: color 0.3s ease; /* Ensure smooth color transition */
+    z-index: 10; /* Ensure links are above other elements */
 }
 
 nav a::after {
@@ -163,12 +164,12 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-nav a:hover::after, nav a:active::after {
-    width: 100%;
+nav a:hover::after {
+    width: 100%; /* Underline effect on hover */
 }
 
 nav a:hover {
-    color: #ff4d4d; /* Enhanced hover effect */
+    color: #ff4d4d; /* Change color on hover */
 }
 
 .theme-toggle {
@@ -402,11 +403,16 @@ canvas {
     transition: transform 0.3s, box-shadow 0.3s;
     animation: fadeIn 1s ease forwards;
     text-align: center;
+    position: relative; /* Ensure positioning context for child elements */
 }
 
 .project-card a {
     display: block;
     margin-bottom: 1rem;
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+    z-index: 2; /* Ensure the link is clickable */
+    position: relative; /* Ensure z-index works */
 }
 
 .project-card img {
@@ -434,6 +440,24 @@ canvas {
 .project-card p {
     font-size: 1rem;
     color: #ccc;
+}
+
+/* Ensure project cards are tappable on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .project-card {
+        cursor: pointer; /* Indicate tappability */
+    }
+    .project-card:hover {
+        transform: none; /* Disable hover transform on touch devices */
+        box-shadow: none; /* Disable hover shadow on touch devices */
+    }
+    .project-card:active {
+        transform: translateY(-5px); /* Slight feedback on tap */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .project-card img {
+        pointer-events: none; /* Prevent image from blocking tap on the link */
+    }
 }
 
 .timeline {
